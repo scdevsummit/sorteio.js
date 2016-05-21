@@ -2,10 +2,9 @@
 
 const fs = require('fs')
 
-fs.readFile('lista.csv', 'utf8', (err, data) => {
+fs.readFile('list.csv', 'utf8', (err, data) => {
   const json = data.split('\n')
    .map((line) => line.split(','))
-   .filter((line) => !/Front/.test(line[4]))
    .filter((line) => !!line[2])
    .map((line) => `${line[1]} - ${line[2]} ${line[3]}`)
 
